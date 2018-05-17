@@ -1,0 +1,43 @@
+* {
+    border: 1px solid red !important;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    margin-top:5%;
+    margin-bottom: 5%;
+    -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+
+/* .start, .finish {
+    border: 2px solid black;
+    
+} */
+
+  
+.pulse-button {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    display: block;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 100px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .pulse-button:hover {
+    -webkit-animation: none;
+  }
+
+  .box1 {
+      font-size: 20px;
+  }
+  
+  
