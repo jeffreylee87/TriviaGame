@@ -47,7 +47,7 @@ $(document).ready(function () {
     $('.start').on('click', function () {
         $(this).hide();
         loadQuestions();
-
+        
     });
 
     //restarts page
@@ -126,38 +126,19 @@ $(document).ready(function () {
             wrong++;
         }
         $(".box2").html(`<div> Answers: [belch] ${qA[storeIndex].options[qA[storeIndex].answer]} [belchhhhh]!!!</div>`);
+        loadFinishPage();
         setTimeout(loadQuestions, 5000);
     }
 
-
-    //NEED TO FINISH MOVING TO NEXT QUESTION SOMEHOW AND LOADING THE FINAL PAGE
     function loadFinishPage() {
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-    // if(questionAnswered==true){
-    //     loadAnswerPage();
-    // }else{
-
-    //     loadQuestions();
-    // }
-
-
-
-
-
-
-
-
-
+        if(storeIndex === 5 ){
+            $(".time-remaining").empty();
+            $(".box1").replaceWith(`<video width="320" height="240" autoplay>
+            <source src="assets/images/endingvideo.mp4" type="video/mp4">
+          </video>`);
+          $('.box2').replaceWith(`<div>Correct: ${correct}, Wrong: ${wrong}, Unanswered: ${unanswered}.<br> Good job, now click on Morty to play again.</div>`);
+          $('.gif').remove();
+          $(".finish").show();
+        }  
+    }    
 });
