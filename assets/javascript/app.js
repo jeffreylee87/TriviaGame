@@ -109,36 +109,42 @@ $(document).ready(function () {
             var a = $('<img>');
             a.attr("src", gifArray[0]);
             $(".gif").html(a);
+            $(".answer").hide();
             unanswered++;
             time = 30;
             indexUp();
+            loadFinishPage();
+
         } else if (qA[storeIndex].answer === selection) {
-            $(".box1").html(`[belch] Even Jerry Smith can get one. -Rick Sanchez...kind of`);
+            $(".box1").html(`Even Jerry Smith can get one. -Rick Sanchez...kind of`);
             var b = $('<img>');
             b.attr("src", gifArray[1]);
             $(".gif").html(b);
             correct++;
+            loadFinishPage();
         } else {
             $(".box1").html("Wubba lubba dub dub, Loser! You're wrong. - Rick Sanchez");
             var c = $('<img>');
             c.attr("src", gifArray[2]);
             $(".gif").html(c);
             wrong++;
+            loadFinishPage();
         }
-        $(".box2").html(`<div> Answers: [belch] ${qA[storeIndex].options[qA[storeIndex].answer]} [belchhhhh]!!!</div>`);
-        loadFinishPage();
+        $(".box2").html(`<div> Answers: ${qA[storeIndex].options[qA[storeIndex].answer]} [belchhhhh]!!!</div>`);
+        // loadFinishPage();
         //The page time is based on the time increment below
-        setTimeout(loadQuestions, 5000);
+        setTimeout(loadQuestions, 500);
+        setTimeout(loadFinishPage, 500);
     }
 
     function loadFinishPage() {
         //update storeIndex if you want to add questions
-        if(storeIndex === 5 ){
+        if(storeIndex === 6 ){
             $(".time-remaining").empty();
             $(".box1").replaceWith(`<video width="320" height="240" autoplay>
             <source src="assets/images/endingvideo.mp4" type="video/mp4">
           </video>`);
-          $('.box2').replaceWith(`<div>Correct: ${correct}, Wrong: ${wrong}, Unanswered: ${unanswered}.<br> Good job, now enjoy this video.<br> Click on Morty to play again.</div>`);
+          $('.box2').replaceWith(`<div class="fin">Correct: ${correct}, Wrong: ${wrong}, Unanswered: ${unanswered}.<br> Good job, now enjoy this video.<br> Click on Morty to play again.</div>`);
           $('.gif').remove();
           $(".finish").show();
         }  

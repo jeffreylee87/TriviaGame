@@ -49,9 +49,7 @@ body {
     cursor: pointer;
   }
 
-  .box1 {
-      font-size: 20px;
-  }
+  
 
   .finish {
       top: -20px;
@@ -119,8 +117,10 @@ body {
   
 .box1, .box2 {
     animation-name: annoying;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
+    text-shadow: 2px 2px 4px #000000;  
+    font-size: 28px;
   }
 
 
@@ -128,3 +128,18 @@ body {
   0%   {color: #00FFFF;}
   100% {color: #00FF33;}
 }
+
+.fin {
+    color: #35C9DD;
+    animation-name: annoying3;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    text-shadow: 2px 2px 4px #000000; 
+    font-size: 28px;
+}
+
+@keyframes annoying3 {
+  0%   {border-color: #00FFFF;}
+  100% {border-color: #00FF33;}
+}
+
