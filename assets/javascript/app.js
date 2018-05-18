@@ -127,16 +127,18 @@ $(document).ready(function () {
         }
         $(".box2").html(`<div> Answers: [belch] ${qA[storeIndex].options[qA[storeIndex].answer]} [belchhhhh]!!!</div>`);
         loadFinishPage();
+        //The page time is based on the time increment below
         setTimeout(loadQuestions, 5000);
     }
 
     function loadFinishPage() {
+        //update storeIndex if you want to add questions
         if(storeIndex === 5 ){
             $(".time-remaining").empty();
             $(".box1").replaceWith(`<video width="320" height="240" autoplay>
             <source src="assets/images/endingvideo.mp4" type="video/mp4">
           </video>`);
-          $('.box2').replaceWith(`<div>Correct: ${correct}, Wrong: ${wrong}, Unanswered: ${unanswered}.<br> Good job, now click on Morty to play again.</div>`);
+          $('.box2').replaceWith(`<div>Correct: ${correct}, Wrong: ${wrong}, Unanswered: ${unanswered}.<br> Good job, now enjoy this video.<br> Click on Morty to play again.</div>`);
           $('.gif').remove();
           $(".finish").show();
         }  
