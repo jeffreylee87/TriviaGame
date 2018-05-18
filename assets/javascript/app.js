@@ -133,8 +133,8 @@ $(document).ready(function () {
         $(".box2").html(`<div> Answers: ${qA[storeIndex].options[qA[storeIndex].answer]} [belchhhhh]!!!</div>`);
         // loadFinishPage();
         //The page time is based on the time increment below
-        setTimeout(loadQuestions, 500);
-        setTimeout(loadFinishPage, 500);
+        setTimeout(loadQuestions, 5000);
+        setTimeout(loadFinishPage, 5000);
     }
 
     function loadFinishPage() {
