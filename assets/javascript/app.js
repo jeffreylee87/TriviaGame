@@ -9,7 +9,7 @@ $(document).ready(function () {
     var selection;
     var storeIndex = 0;
     var gifArray = ["assets/images/timeout.gif", "assets/images/correct.gif", "assets/images/wrong.gif"];
-    
+    var audio = new Audio('assets/images/rickandmortytheme.mp3');
 
     var qA = [{
         question: "Which is the dimension of the original Rick?",
@@ -35,8 +35,25 @@ $(document).ready(function () {
         question: "What is Schmeckle?",
         options: ["Rick's favorite food", "A currency", "Rick's Cat-Person friend", "Morty's code name for his manhood"],
         answer: 1,
+    }, {
+        question: "Who are Rick Sanchez's two best friends?",
+        options: ["Eagleperson and Scrunchy", "Beakbeak and Squinchy", "Birdperson and Squanchy", "Hawkperson and Sqelchy"],
+        answer: 2,
+    }, {
+        question: "What non-human species makes up half of Morty's son?",
+        options: ["Kanye West", "Gurglenstein", "Gazorpazorp", "Gesaffelstein"],
+        answer: 2,
+    }, {
+        question: "What word should you never say to a Traflorkian?",
+        options: ["Glip Glop", "Bee Bop", "Hip Hop", "Fart Fart"],
+        answer: 0,
+    }, {
+        question: "What are the Ball Fondlers?",
+        options: ["Avengers arch nemesis", "Rick and Morty's arch nemisis", "Donald Trump's Arch nemisis", "Rick and Morty's favorite TV show"],
+        answer: 3,
     }];
 
+    //audio.play();  audio.pause(); figure it out
     function initializePage() {
         $(".box1").html("Hit Rick to Start");
         $(".box2").empty();
@@ -47,7 +64,7 @@ $(document).ready(function () {
     $('.start').on('click', function () {
         $(this).hide();
         loadQuestions();
-        
+        audio.play();
     });
 
     //restarts page
@@ -138,8 +155,9 @@ $(document).ready(function () {
     }
 
     function loadFinishPage() {
-        //update storeIndex if you want to add questions
-        if(storeIndex === 6 ){
+        //update storeIndex if you want to add questions  
+        if(storeIndex === 10 ){
+            audio.pause();
             $(".time-remaining").empty();
             $(".box1").replaceWith(`<video width="320" height="240" autoplay>
             <source src="assets/images/endingvideo.mp4" type="video/mp4">
@@ -147,6 +165,6 @@ $(document).ready(function () {
           $('.box2').replaceWith(`<div class="fin">Correct: ${correct}, Wrong: ${wrong}, Unanswered: ${unanswered}.<br> Good job, now enjoy this video.<br> Click on Morty to play again.</div>`);
           $('.gif').remove();
           $(".finish").show();
-        }  
+        }
     }    
 });
