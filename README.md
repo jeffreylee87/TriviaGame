@@ -1,1 +1,1 @@
-# TriviaGame
+Rick and Morty themed trivia game. First time using time functions, jQuery and objects all in one project. Understanding the concept of integrating time with different jQuery events was a challenge for this beginner. 
